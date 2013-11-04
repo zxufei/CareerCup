@@ -17,7 +17,6 @@ public class Question1_4 {
 //	Use char character
 	public static String replaceSpace(String str){
 		String str_trim = str.trim();//get rid of spaces at the head and tail
-//		char[] chars = str.toCharArray();
 		char[] chars_trim = str_trim.toCharArray();
 		int spaceCount = 0;
 		for (int i = 0; i<str_trim.length(); i++){
@@ -31,10 +30,13 @@ public class Question1_4 {
 				spacesIndex++;
 			}
 			else{
-				newchars[spacesIndex] = '%';
-				newchars[spacesIndex+1] = '2';
-				newchars[spacesIndex+2] = '0';
-				spacesIndex = spacesIndex +3;
+//				newchars[spacesIndex] = '%';
+//				newchars[spacesIndex+1] = '2';
+//				newchars[spacesIndex+2] = '0';
+//				spacesIndex = spacesIndex +3;	
+				newchars[spacesIndex++] = '%';
+				newchars[spacesIndex++] = '2';
+				newchars[spacesIndex++] = '0';
 			}
 		}
 		return new String(newchars);		
@@ -42,7 +44,7 @@ public class Question1_4 {
 	
 	
 	public static void main (String args[]){
-		String s = "Mr John Smith is good person.     ";
+		String s = "Mr John Smith is good person. we like him very much.     ";
 		String s2 = replaceSpace(s);
 		System.out.println(s);
 		System.out.println(s2);

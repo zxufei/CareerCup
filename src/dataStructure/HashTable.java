@@ -2,6 +2,7 @@ package dataStructure;
 
 public class HashTable {
 
+	
 	/**
 	 * @param args
 	 */

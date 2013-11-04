@@ -19,10 +19,10 @@ public class Question1_8 {
 				
 	}
 	
-	public static boolean isSubstring2(String s1, String s2){
-		if(s1.length() != s2.length()) return false;
-		return true;
-	}
+//	public static boolean isSubstring2(String s1, String s2){
+//		if(s1.length() != s2.length()) return false;
+//		return true;
+//	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

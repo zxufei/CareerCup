@@ -40,7 +40,7 @@ public class Question1_1 {
 	//boolean map O(n)
 	public static boolean isUniqueChar3(String str){
 		if (str.length() > 256) return false;
-		boolean[] map = new boolean[256];//all map is false
+		boolean[] map = new boolean[256];//all map is false, additional buffer but not data structure
 		for (int i = 0; i< str.length(); i++){
 			char c = str.charAt(i);
 //			System.out.print(c);

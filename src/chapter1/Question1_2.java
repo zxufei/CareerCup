@@ -53,9 +53,9 @@ public class Question1_2 {
 		char[] c_array = str.toCharArray();
 		int len = str.length();
 		for (int i =0; i<len/2; i++){
-			char head = c_array[i];
-			c_array[i] = c_array[len-1-i];
-			c_array[len-1-i] = head;
+			char head = c_array[i];//copy head
+			c_array[i] = c_array[len-1-i];//assign head by end
+			c_array[len-1-i] = head;//assign end by head
 		}
 //		String s2 = Arrays.toString(c_array); //the string include comma and [ ]
 		return new String(c_array);
