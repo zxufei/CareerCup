@@ -1,13 +1,111 @@
 package dataStructure.sort;
 import java.util.*;
 
+import chapter2.*;
+
 public class MergeSort {
 
 	/**
 	 * @param args
 	 */
 	
-	//using Arraylist.
+
+	//leetcode sortList using linkedlist for merge sort. linkedlist based
+    public Node mergeSort(Node list){
+        if (list != null && list.next != null){
+            Node firstList = list;
+            Node secondList = split(list);
+            Node firstSorted = mergeSort(firstList);
+            Node secondSorted = mergeSort(secondList);
+            Node sortList = combine(firstSorted, secondSorted);
+            return sortList;
+        }
+        return list;
+    }
+    
+    
+    public Node split(Node list){
+        if (list == null || list.next ==  null) return null;
+        Node pt = list;
+        int count = 1;
+        while(pt.next!=null){
+            pt = pt.next;
+            count++;
+        }
+        Node middle = list;
+        for (int i=1; i<count/2; i++){
+            middle = middle.next;
+        }
+        Node second = middle.next;
+        middle.next = null;
+        return second;
+    }
+    
+    public Node combine(Node l1, Node l2){
+        Node newNode = null;
+        Node pt = null;
+        while(l1!= null && l2 != null){
+            if (l1.data <= l2.data){
+                Node tmp = l1;
+                l1 = l1.next;
+                tmp.next = null;
+                if (newNode == null) {
+                    newNode = tmp;
+                    pt = tmp;
+                }
+                else{
+                    pt.next = tmp;
+                    pt = pt.next;
+                }
+            }
+            else{
+                Node tmp = l2;
+                l2 = l2.next;
+                tmp.next = null;
+                if (newNode == null) {
+                    newNode = tmp;
+                    pt = tmp;
+                }
+                else{
+                    pt.next = tmp;
+                    pt = pt.next;
+                }
+            }
+        }
+        while(l1!=null){
+            Node tmp = l1;
+            l1 = l1.next;
+            tmp.next = null;
+            if (newNode == null) {
+                newNode = tmp;
+                pt = tmp;
+            }
+            else{
+                pt.next = tmp;
+                pt = pt.next;
+            }
+        }
+        while(l2!=null){
+            Node tmp = l2;
+            l2 = l2.next;
+            tmp.next = null;
+            if (newNode == null) {
+                newNode = tmp;
+                pt = tmp;
+            }
+            else{
+                pt.next = tmp;
+                pt = pt.next;
+            }
+        }
+        
+        return newNode;
+    }
+    
+    
+    //array based mergesort
+    
+	//using Arraylist based.
 	public static void mergeSort ( ArrayList<Integer> left ){
 		ArrayList<Integer> right = new ArrayList<Integer>();
 		if (left.size() == 1) return;
@@ -61,20 +159,9 @@ public class MergeSort {
 //		}
 	}
 	
-	
-	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ArrayList<Integer> test = new ArrayList<Integer>();
-//		test.add(4);
-//		test.add(6);
-//		test.add(0);
-//		test.add(1);
-//		test.add(3);
-//		test.add(9);		
-//		test.add(4);
-//		test.add(3);
-//		test.add(9);
 		for (int i=0; i<20; i++){
 			int random = (int)(Math.random()*100);
 			test.add(random);

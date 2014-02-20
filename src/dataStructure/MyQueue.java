@@ -1,11 +1,12 @@
 package dataStructure;
 import chapter2.Node;
-
+/**
+ * @param args
+ * Using linked list to implement queue.
+ */
 public class MyQueue {
 
-	/**
-	 * @param args
-	 */
+
 	public Node first, last;
 	
 	public MyQueue(){

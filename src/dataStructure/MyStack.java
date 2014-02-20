@@ -1,12 +1,12 @@
 package dataStructure;
 import chapter2.Node;
 
+/**
+ * @param args
+ * using linked list to impelement a stack.
+ */
 public class MyStack {
 
-	/**
-	 * @param args
-	 * using linked list to impelement a stack.
-	 */
 	
 	public Node top;
 	private int count = 0;

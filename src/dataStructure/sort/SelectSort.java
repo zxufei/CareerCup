@@ -4,7 +4,10 @@ public class SelectSort {
 
 	/**
 	 * @param args
+	 * select first one and then compare with later numbers.
 	 */
+	
+	//select sort using array
 	public static void selectSort(int[] unsortList){
 		int min = 0;
 		int pos = 0;
@@ -22,7 +25,6 @@ public class SelectSort {
 			unsortList[i] = min;
 			unsortList[pos] = temp;
 		}
-//		return unsortList;
 	}
 	
 	public static void main(String[] args) {

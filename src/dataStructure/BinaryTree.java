@@ -9,8 +9,9 @@ public class BinaryTree {
 	class WrapInt{
 		int value = 0;
 	}
-	
 	protected TreeNode root;
+	
+	
 	
 	public BinaryTree(){
 		root = null;
