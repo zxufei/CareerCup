@@ -20,22 +20,34 @@ public class LinkedListCycle {
 	 *     }
 	 * }
 	 */
-	
 	public boolean hasCycle(Node head) {
-	   // IMPORTANT: Please reset any member data you declared, as
-	   // the same Solution instance will be reused for each test case.
+        if (head == null) return false;
+
+        Node slower, faster;
+		slower = faster = head;
+        while (faster!=null && faster.next!=null){
+		   slower = slower.next;
+		   faster = faster.next.next;
+		   if (slower == faster) return true;
+		}
+		return false;
+    }
+	
+	public boolean hasCycle2(Node head) {
 		  if (head == null) return false;
 	        // if (head.next == null) return false;
 	        Node slower, faster;
 			slower = faster = head;
-	       while (faster.next!=null){
+	        while (faster.next!=null){
 			    slower = slower.next;
 			    if(faster.next.next == null) return false;
 			    else faster = faster.next.next;
 			    if (slower == faster) return true;
 			}
 			return false;
-	}    
+	}
+	
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 

@@ -15,7 +15,8 @@ public class MedianOfTwoSortedArrays {
         int middle = (A.length + B.length)/2;
         int i=0,j=0;
         while(middle >= 0){
-        	median1 = median2;
+        	median1 = median2;//record the previous number before median,if there are even numbers,
+        	//we must get average number from them.
         	if (i<A.length && j<B.length){
         		if(A[i] <= B[j]){
         			median2 = A[i++];
@@ -32,7 +33,7 @@ public class MedianOfTwoSortedArrays {
         	}
         	middle--;
         }
-        if ((A.length + B.length)/2 == 0) return median2;
+        if ((A.length + B.length)/2 == 0) return median2;//only one of the array has data.
         else if ((A.length + B.length)%2 != 0) return median2;
         else return (median1+median2)/2.0;
     }
