@@ -10,6 +10,18 @@ public class DectectLoop {
 	 * classical algorithm for detect if a linked list 
 	 */
 	
+	public boolean hasCycle(Node head) {
+        if (head == null) return false;
+
+        Node slower, faster;
+		slower = faster = head;
+        while (faster!=null && faster.next!=null){
+		   slower = slower.next;
+		   faster = faster.next.next;
+		   if (slower == faster) return true;
+		}
+		return false;
+    }
 	
 	public static boolean hasLoop(Node list){
 		if (list == null) return false;

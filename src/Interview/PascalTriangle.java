@@ -1,7 +1,5 @@
 package Interview;
 
-import java.util.Arrays;
-
 public class PascalTriangle {
 
 	/**
@@ -41,8 +39,10 @@ public class PascalTriangle {
 	
 	//method2
 	public static void Pascal(int line){
+		if (line == 0) System.out.println("No pascal trianlge displayed.");
 		int[] row = new int[0];
-		int[] pre = new int[0];
+//		int[] pre = new int[0];
+		int [] pre = row.clone();
 		for (int i=0; i<line; i++){	
 			row = new int[i+1];
 			row[0]= row[i] =1;
@@ -50,8 +50,9 @@ public class PascalTriangle {
 				row[j] = pre[j-1]+pre[j];	
 			}
 			printArray(row,line);
-			pre = new int[i+1];
-			pre = Arrays.copyOf(row, row.length);
+//			pre = new int[i+1];
+//			pre = Arrays.copyOf(row, row.length);
+			pre = row.clone();
 		
 		}
 	}
@@ -71,8 +72,9 @@ public class PascalTriangle {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 //		printPascal(6);
-		Pascal(6);
-
+		Pascal(1);
+		
+		
 	}
 
 }

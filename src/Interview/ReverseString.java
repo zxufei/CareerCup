@@ -48,10 +48,9 @@ public class ReverseString {
 	//using a regular char array
 	public static String ReverseStr4(String s){
 		char[] n = new char[s.length()];//new char array to store reverse character
-		int count=0;
-		while(count < s.length()){
-			n[s.length()-1-count] = s.charAt(count);
-			count++;
+		for (int i=0;i < s.length();i++){
+//			n[s.length()-1-i] = s.charAt(i);
+			n[i] = s.charAt(s.length()-1-i);
 		}
 		return String.valueOf(n);
 	}
@@ -61,11 +60,11 @@ public class ReverseString {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String s = "1112233452dgdsfer42423ddgg";
+		String s = "1112233452dgdsfer42423ddg";
 		
 		System.out.println(s);
-//		String news = ReverseStr3(s);
 		String news = ReverseStr3(s);
+//		String news = ReverseStr4(s);
 //		String news = ReverseStr2(s);
 		System.out.println(news);
 	}

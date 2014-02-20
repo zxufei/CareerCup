@@ -69,8 +69,9 @@ public class ReverseLinkedList {
 		return rl;
 	}
 	
-	//Reverse a linked list without in-place, using node point to reverse
+	//Reverse a linked list  in-place, using node point to reverse
 	public static Node reverseLinkedlistInplace(Node n){
+		if (n == null) return n;
 		Node pre = null;
 		Node temp = n;// temp copy of n
 		while (n.next != null){

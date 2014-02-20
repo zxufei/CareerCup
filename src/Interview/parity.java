@@ -7,7 +7,7 @@ public class parity {
 	 * It result many garbage
 	 * @param args
 	 */
-	   public static String parity(String msg)
+	   public static String parity1(String msg)
 	   {
 	       String parityStr = null;
 	       int n = msg.hashCode();
@@ -27,8 +27,8 @@ public class parity {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String test = "ssssddf";
-		String output = parity(test);
+		String test = "ssssddf88";
+		String output = parity1(test);
 		System.out.println(output);
 	}
 
