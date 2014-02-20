@@ -34,20 +34,6 @@ public class Question1_2 {
 		return s.toString();//StringBuffer to String		
 	}
 	
-//	StringBuffer is better than String
-	public static String reverseC3 (String str){
-		Stack<Character> charStack = new Stack<Character>();
-		for (char c : str.toCharArray()){
-			charStack.push(c);
-		}
-		
-		String s = new String();
-		while(!charStack.isEmpty()){
-			s = s + charStack.pop();
-		}
-		return s;		
-	}
-	
 //	not use Stack
 	public static String reverseC2 (String str){
 		char[] c_array = str.toCharArray();
@@ -66,10 +52,8 @@ public class Question1_2 {
 		String test = "abcdefg 1234567";
 		String a = reverseC1(test);
 		String b = reverseC2(test);
-		String c = reverseC3(test);
 		System.out.println(a);
 		System.out.println(b);
-		System.out.println(c);
 	}
 	
 }
